@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: php-fpm
+spec:
+    replicas: 2
+    selector:
+        matchLabels:
+            app: php-fpm
+    template:
+        metadata:
+            labels:
+                app: php-fpm
+        spec:
+            nodeSelector:
+                work: "true"
+            containers:
+            - name: php-fpm
+              image: chenguorong/php7.1:latest
+              imagePullPolicy: IfNotPresent
+              volumeMounts:
+              - name: api-code
+                mountPath: /data/www/api
+              - name: xyk-code
+                mountPath: /data/www/xiaoyinka
+              - name: ssh
+                mountPath: /root/.ssh/
+            volumes:
+            - name: api-code
+              nfs:
+                path: /data/www/api
+                server: 172.16.0.17
+            - name: xyk-code
+              nfs:
+                path: /data/www/xiaoyinka
+                server: 172.16.0.17
+            - name: ssh
+              secret:
+                      secretName: ssh
