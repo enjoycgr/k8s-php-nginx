@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress
+  annotations:
+    kubernetes.io/ingress.class: traefik
+spec:
+  rules:
+    - host: www.enjoycon.club
+      http:
+        paths:
+          - backend:
+              serviceName: xyk-nginx
+              servicePort: 8080
+    - host: api.enjoycon.club
+      http:
+        paths:
+          - backend:
+                  serviceName: xyk-nginx
+                  servicePort: 9090     

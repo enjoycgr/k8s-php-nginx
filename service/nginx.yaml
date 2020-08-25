@@ -3,7 +3,6 @@ kind: Service
 metadata:
     name: xyk-nginx
 spec:
-    type: NodePort
     ports:
     - name: xiaoyinka
       port: 8080
