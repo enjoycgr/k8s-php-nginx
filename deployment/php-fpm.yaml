@@ -24,7 +24,7 @@ spec:
               - name: xyk-code
                 mountPath: /data/www/xiaoyinka
               - name: ssh
-                mountPath: /root/.ssh/
+                mountPath: /root/.ssh
             volumes:
             - name: api-code
               nfs:
@@ -35,5 +35,6 @@ spec:
                 path: /data/www/xiaoyinka
                 server: 172.16.0.17
             - name: ssh
-              configMap:
-                name: ssh
+              nfs:
+                path: /data/www/.ssh
+                server: 172.16.0.17
