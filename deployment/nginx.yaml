@@ -28,11 +28,11 @@ spec:
             volumes:
             - name: api-code
               nfs:
-                path: /data/www/api
+                path: /api
                 server: 172.16.0.17
             - name: xyk-code
               nfs:
-                path: /data/www/xiaoyinka
+                path: /xiaoyinka
                 server: 172.16.0.17
             - name: config
               configMap:
