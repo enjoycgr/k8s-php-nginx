@@ -7,6 +7,8 @@ COPY ./sources/sources.list /etc/apt/sources.list
 # 设置时区
 RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
+COPY "./" "$PHP_INI_DIR/php-fpm.d/www.conf"
+
 # 安装扩展
 RUN buildDeps=" \
         default-libmysqlclient-dev \
