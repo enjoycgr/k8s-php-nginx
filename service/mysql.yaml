@@ -7,7 +7,6 @@ spec:
     ports:
     - name: mysql
       port: 3306
-      targetPort: 33066
-      protocol: TCP
+      nodePort: 33306
     selector:
         app: mysql
