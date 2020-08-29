@@ -7,7 +7,7 @@ spec:
   ports:
     - name: mysql
       port: 3306
-      nodePort: 33306
+      nodePort: 30036
   selector:
     app: mysql
 ---
@@ -34,4 +34,4 @@ spec:
               ports:
                 - contaninerPort: 3306
               - name: MYSQL_ROOT_PASSWORD
-                value: "letmein"
+                value: "wodeshengri"
