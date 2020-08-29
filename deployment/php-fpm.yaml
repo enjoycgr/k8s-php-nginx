@@ -1,3 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: php-fpm
+spec:
+  ports:
+    - name: php-fpm
+      port: 9000
+      targetPort: 9000
+      protocol: TCP
+    - name: php-fpm
+      port: 9898
+      targetPort: 9898
+      protocol: TCP
+  selector:
+    app: php-fpm
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:

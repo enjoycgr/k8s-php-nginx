@@ -17,4 +17,10 @@ spec:
         paths:
           - backend:
                   serviceName: xyk-nginx
-                  servicePort: 9090     
+                  servicePort: 9090
+    - host: roadrunner.enjoycon.club
+        http:
+          paths:
+              - backend:
+                serviceName: php-fpm
+                servicePort: 9898
