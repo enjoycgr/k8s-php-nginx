@@ -26,7 +26,7 @@ spec:
                 app: mysql
         spec:
             nodeSelector:
-                work: "true"
+                master: "true"
             containers:
             - name: mysql
               image: mysql

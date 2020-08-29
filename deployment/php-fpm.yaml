@@ -8,7 +8,7 @@ spec:
       port: 9000
       targetPort: 9000
       protocol: TCP
-    - name: php-fpm
+    - name: roadrunner
       port: 9898
       targetPort: 9898
       protocol: TCP
