@@ -32,7 +32,7 @@ spec:
               image: mysql
               imagePullPolicy: IfNotPresent
               ports:
-                - contaninerPort: 3306
+              - contaninerPort: 3306
               env:
-                - name: MYSQL_ROOT_PASSWORD
-                  value: "wodeshengri"
+              - name: MYSQL_ROOT_PASSWORD
+                value: "wodeshengri"
